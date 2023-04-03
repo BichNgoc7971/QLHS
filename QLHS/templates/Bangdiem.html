@@ -1,0 +1,49 @@
+{% extends 'login.html' %}
+
+{% block content %}
+<h1 class="p1">QUẢN LÝ NHẬP ĐIỂM</h1>
+<form method="post" action="/Bangdiem.html">
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <section class="card-item text-white" style="border-radius: 1rem">
+                <table class="table text-white">
+                    <thead>
+                    <tr class="text-center">
+                        <th colspan="4">BẢNG ĐIỂM MÔN HỌC</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Lớp</th>
+                        <th scope="col">Nội dung</th>
+                        <th scope="col">Môn</th>
+                        <th scope="col">Nội dung</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>Học kỳ</th>
+                        <td>Nội dung</td>
+                        <td>Nội dung</td>
+                        <td>Nội dung</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">
+                        <th>STT</th>
+                        <th>Họ tên</th>
+                        </td>
+                        <th>Điểm 15'</th>
+                        <th>Điểm 1 tiết</th>
+                        <th>Điểm thi</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</form>
+{% endblock %}

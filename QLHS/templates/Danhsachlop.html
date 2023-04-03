@@ -1,0 +1,32 @@
+{% extends 'login.html' %}
+
+{% block content %}
+<h1 class="p1">DANH SÁCH HỌC SINH</h1>
+<form method="post" action="/Danhsachlop.html">
+    <p class="text1">*Vui lòng nhập đầy thông tin học sinh vào form sau</p>
+    <div class="row">
+        <div class="col-md-10">
+            <table class="table">
+                <tr>
+                    <th></th>
+                    <th>Họ tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Email</th>
+                    <th>Giới tính</th>
+                    <th>Địa chỉ</th>
+                    <th>SĐT</th>
+                </tr>
+                <tr>
+                    <th><input type="checkbox"></th>
+                </tr>
+                <tr>
+                    <th><input type="checkbox"></th>
+                </tr>
+                <tr>
+                    <th><input type="checkbox"></th>
+                </tr>
+            </table>
+            <a href="#" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Lập danh sách</a>
+        </div>
+</form>
+{% endblock %}

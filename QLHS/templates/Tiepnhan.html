@@ -1,0 +1,61 @@
+{% extends 'login.html' %}
+
+{% block content %}
+<h1 class="p1">TIẾP NHẬN HỌC SINH</h1>
+<form method="post" action="/Tiepnhan.html">
+    <p class="text1">*Vui lòng nhập đầy thông tin học sinh vào form sau</p>
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <section class="card-item text-white" style="border-radius: 1rem">
+                <div class="card-body p-5 ">
+                    <div class="mb-md-5 pb-5">
+                        <form action="#">
+                            <h2 class="text-center text-white">HỒ SƠ HỌC SINH</h2>
+                            <div class="container">
+                                <div class="f-grid">
+                                    <div class="f-grid-col">
+                                        <div class='ht'>
+                                            Họ tên: <input type="text" name="hoten" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="f-grid-col">
+                                        <div class='ht'>
+                                            Giới tính: <input name="gender" type="radio" value="Nam"/>Nam
+                                                        <input name="gender" type="radio" value="Nữ"/>Nữ
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="f-grid">
+                                    <div class="f-grid-col">
+                                        <label >
+                                            Ngày sinh: <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                                        </label>
+                                    </div>
+                                    <div class="f-grid-col">
+                                        <div class='ht'>
+                                            Địa chỉ: <input type="text" name="diachi" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="f-grid">
+                                    <div class="f-grid-col">
+                                        <label >
+                                            Số điện thoại: <input type="text" name="sodienthoai" placeholder="">
+                                        </label>
+                                    </div>
+                                    <div class="f-grid-col">
+                                       <label >
+                                            Email: <input type="text" name="email" placeholder="">
+                                       </label>
+                                    </div>
+                                </div>
+                                  <a href="#" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Thêm</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</form>
+{% endblock %}
