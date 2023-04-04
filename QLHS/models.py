@@ -1,5 +1,5 @@
 from QLHS import db, app
-from sqlalchemy import Column, String, Integer, Float, ForeignKey, Text, DateTime, Date
+from sqlalchemy import Column, String, Integer, Float, ForeignKey, Text, DateTime, Date, Enum
 from sqlalchemy.orm import relationship
 from flask_login import UserMixin
 from datetime import datetime
@@ -15,9 +15,8 @@ class User(db.Model, UserMixin):
 
 class Student(db.Model):
     id = Column(Integer, primary_key=True, autoincrement=True)
-    hoten = Column(String(50), nullable=False)
-    gioitinh = Column(String(10), nullable=False)
-    ngaysinh = Column(Date, nullable=False)
+    hoten = Column(String(100), nullable=False)
+    ngaysinh = Column(DateTime, nullable=False)
     sdt = Column(String(20), nullable=False)
     diachi = Column(String(255), nullable=False)
     email = Column(String(255))
@@ -25,17 +24,15 @@ class Student(db.Model):
 
 if __name__ == '__main__':
     with app.app_context():
-        # db.create_all()
-        # # import hashlib
+        db.create_all()
+        # import hashlib
         # u = User(name="ADMIN", username="admin", password=str(hashlib.md5("12345".encode('utf-8')).hexdigest()))
         # db.session.add(u)
         # db.session.commit()
 
-        h = Student(hoten="Dang Luu Bich Ngoc", gioitinh='nu', sdt='0938807971',
+        # h = Student(hoten="Dang Luu Bich Ngoc", gioitinh='nu', sdt='0938807971',ngaysinh='2006-02-01',
+        # diachi = 'BinhDuong',
+        # email = '1954052064ngoc@ou.edu.vn')
 
-
-        diachi = 'BinhDuong',
-        email = '1954052064ngoc@ou.edu.vn')
-
-        db.session.add(h)
-        db.session.commit()
+        # db.session.add(h)
+        # db.session.commit()

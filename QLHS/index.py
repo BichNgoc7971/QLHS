@@ -1,7 +1,7 @@
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, session
 from QLHS import app, dao, login
 from flask_login import login_user, logout_user
-from datetime import date
+from datetime import datetime
 
 
 @app.route("/")
@@ -41,11 +41,25 @@ def my_Tiepnhan():
     return render_template("Tiepnhan.html")
 
 
-
-
-@app.route('/Danhsachlop')
-def my_Danhsachlop():
-    return render_template("Danhsachlop.html")
+@app.route('/Tiepnhan', methods=['post'])
+def Tiepnhan_process():
+    err_msg = ''
+    if request.method == 'POST':
+        ngaysinh = datetime.strptime(request.form['ngaysinh'], "%Y-%m-%d")
+        t = datetime.now().year - ngaysinh.year
+        if (t >= 15 and t <= 20):
+            try:
+                dao.add_student(hoten=request.form['hoten'],
+                                diachi=request.form['diachi'],
+                                sdt=request.form['sdt'],
+                                ngaysinh=request.form['ngaysinh'],
+                                email=request.form['email'])
+                err_msg = "Thêm thành công"
+            except:
+                err_msg = "Đã có lỗi xảy ra! Vui lòng thử lại sau!"
+        else:
+            err_msg = "Độ tuổi không đúng yêu cầu!!"
+    return render_template('Tiepnhan.html', err_msg=err_msg)
 
 
 @app.route('/Bangdiem')

@@ -22,14 +22,15 @@ def add_user(username, password, name):
     db.session.commit()
 
 
-def get_student_by_id(student_id):
-    return Student.query.get(student_id)
-
-
-def add_student(ho, ten, gioitinh, ngaysinh,
+def add_student(hoten, ngaysinh,
                 sdt, diachi, email):
-    h = Student(ho=ho, ten=ten, gioitinh=gioitinh, ngaysinh=ngaysinh,
+    h = Student(hoten=hoten, ngaysinh=ngaysinh,
                 sdt=sdt, diachi=diachi,
                 email=email)
     db.session.add(h)
     db.session.commit()
+
+
+def get_hs_by_id(hs_id):
+    return Student.query.get(hs_id)
+

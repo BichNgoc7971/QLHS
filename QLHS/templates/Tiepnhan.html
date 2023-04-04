@@ -2,7 +2,14 @@
 
 {% block content %}
 <h1 class="p1">TIẾP NHẬN HỌC SINH</h1>
-<form method="post" action="/Tiepnhan.html">
+
+{% if err_msg %}
+<div class="alert alert-danger">
+    {{ err_msg }}
+</div>
+{% endif %}
+
+<form action="/Tiepnhan" method="post">
     <p class="text1">*Vui lòng nhập đầy thông tin học sinh vào form sau</p>
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -15,43 +22,45 @@
                                 <div class="f-grid">
                                     <div class="f-grid-col">
                                         <div class='ht'>
-                                            Họ tên: <input type="text" name="hoten" placeholder="">
+                                            <label for="hoten" class="form-label">Họ tên:</label>
+                                            <input type="text" class="form-control" id="hoten"
+                                                   placeholder="hoten" name="hoten">
                                         </div>
                                     </div>
                                     <div class="f-grid-col">
                                         <div class='ht'>
-                                            Giới tính: <input name="gender" type="radio" value="Nam"/>Nam
-                                                        <input name="gender" type="radio" value="Nữ"/>Nữ
+                                            <label for="diachi" class="form-label">Địa chỉ:</label>
+                                            <input type="diachi" class="form-control" id="diachi"
+                                                   placeholder="diachi" name="diachi">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="f-grid">
-                                    <div class="f-grid-col">
-                                        <label >
-                                            Ngày sinh: <input type="datetime-local" id="birthdaytime" name="birthdaytime">
-                                        </label>
-                                    </div>
+                                        <div class="f-grid-col">
+                                            <label for="ngaysinh">Ngày sinh</label>
+                                            <input type="date" name="ngaysinh" id="ngaysinh" value="">
+                                        </div>
+
+                                        <div class="f-grid-col">
+                                            <div class='ht'>
+                                                <label for="sdt" class="form-label">Số điện thoại:</label>
+                                                <input type="sdt" class="form-control" id="sdt"
+                                                       placeholder="sdt" name="sdt">
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="f-grid">
                                     <div class="f-grid-col">
                                         <div class='ht'>
-                                            Địa chỉ: <input type="text" name="diachi" placeholder="">
+                                            <label for="email" class="form-label">Email:</label>
+                                            <input type="email" class="form-control" id="email"
+                                                   placeholder="email" name="email">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="f-grid">
-                                    <div class="f-grid-col">
-                                        <label >
-                                            Số điện thoại: <input type="text" name="sodienthoai" placeholder="">
-                                        </label>
-                                    </div>
-                                    <div class="f-grid-col">
-                                       <label >
-                                            Email: <input type="text" name="email" placeholder="">
-                                       </label>
-                                    </div>
-                                </div>
-                                  <a href="#" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Thêm</a>
                             </div>
                         </form>
+                        <button type="submit" class="btn btn-primary">Thêm</button>
                     </div>
                 </div>
             </section>
